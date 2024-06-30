@@ -1,0 +1,18 @@
+
+<h3>First component</h3>
+<select (change)="changeShape($event)">
+    <option value="square">Square</option>
+    <option value="rectangle">Rectangle</option>
+    <option value="circle">Circle</option>
+</select>
+
+<select (change)="changeShapeColor($event)">
+    <option value="red">Red</option>
+    <option value="green">Green</option>
+    <option value="blue">Blue</option>
+</select>
+
+<div [ngStyle]="actualShapeStyle"></div>
+
+<button (click)="drawShape()">Draw</button>
+

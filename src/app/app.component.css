@@ -1,0 +1,18 @@
+.container {
+    padding: 50px;
+    text-align: center;
+    height: 200px;
+}
+
+.red-class {
+    color: red;
+    background-color: black;
+    font-size: larger;
+}
+
+
+.blue-class {
+    color: blue;
+    background-color: gray;
+    font-size: larger;
+}
