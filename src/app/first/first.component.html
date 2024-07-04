@@ -1,18 +1,16 @@
+<h1>Analyze Word</h1>
+<input type="text" (input)="calculateData($event)" ngModel #myInput>
 
-<h3>First component</h3>
-<select (change)="changeShape($event)">
-    <option value="square">Square</option>
-    <option value="rectangle">Rectangle</option>
-    <option value="circle">Circle</option>
-</select>
+<div [ngStyle]="{
+    display: myInput.value.length===0?'none':'block'
+}">
+<h3>Results</h3>
+<h4>Number of characters: {{myInput.value.length}}</h4>
+<h6>Vowels</h6>
 
-<select (change)="changeShapeColor($event)">
-    <option value="red">Red</option>
-    <option value="green">Green</option>
-    <option value="blue">Blue</option>
-</select>
+<h5 *ngFor="let item of data; let i = index;">
+    {{vowels[i]}}: {{item}}
+</h5>
 
-<div [ngStyle]="actualShapeStyle"></div>
 
-<button (click)="drawShape()">Draw</button>
-
+</div>

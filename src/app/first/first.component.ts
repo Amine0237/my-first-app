@@ -15,30 +15,26 @@ export class FirstComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  actualShape = 'rectangle';
-  actualShapeColor = 'red';
+  data;
+  vowels = ['a', 'e', 'i', 'o', 'u'];
 
-  actualShapeStyle = this.sharedService.drawShape(this.actualShape, this.actualShapeColor);
+  calculateData(event){
+    let text = event.target.value;
+    let dd = [0,0,0,0,0]
+
+    for(let i = 0; i<text.length; i++){
+      switch(text[i]){
+        case 'a': dd[0]++; break;
+        case 'e': dd[1]++; break;
+        case 'i': dd[2]++; break;
+        case 'o': dd[3]++; break;
+        case 'u': dd[4]++; 
+      }
+    }
+    this.data = dd;
+  }
+
   
-  changeShape(event){
-    this.actualShape = event.target.value;
-  }
-  
-  changeShapeColor(event){
-    this.actualShapeColor = event.target.value;
-  }
 
-  drawShape(){
-    this.actualShapeStyle=this.sharedService.drawShape(this.actualShape, this.actualShapeColor);
-  }
 
-/*
-firstNum = 0;
-  secondNum = 0;
-  output = 0;
-  calculate(){
-    this.output = this.sharedService.calculate(this.firstNum, this.secondNum);
-    this.sharedService.firstPageValue = this.output;
-  }
-*/
 }
