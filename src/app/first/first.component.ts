@@ -18,6 +18,7 @@ export class FirstComponent implements OnInit {
   data;
   vowels = ['a', 'e', 'i', 'o', 'u'];
 
+  kika;
   calculateData(event){
     let text = event.target.value;
     let dd = [0,0,0,0,0]
